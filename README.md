@@ -19,16 +19,36 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
 - ```SolarwindsDiagnostics.exe```
 
 ## Network information:
+**General Ranges**
 - DNS CNAMEs for C2:
   - ```.appsync-api.eu-west-1[.]avsvmcloud[.]com```
   - ```.appsync-api.us-west-2[.]avsvmcloud[.]com```
   - ```.appsync-api.us-east-1[.]avsvmcloud[.]com```
   - ```.appsync-api.us-east-2[.]avsvmcloud[.]com```
-- IPs for C2:
+- IP Ranges for C2:
   - ```20.140.0.0/15```
   - ```96.31.172.0/24```
   - ```131.228.12.0/22```
   - ```144.86.226.0/24```
+**Specifically Identified**
+- DNS Names associated with C2:
+  - ```6a57jk2ba1d9keg15cbg.appsync-api.eu-west-1.avsvmcloud[.]com```
+  - ```7sbvaemscs0mc925tb99.appsync-api.us-west-2.avsvmcloud[.]com```
+  - ```gq1h856599gqh538acqn.appsync-api.us-west-2.avsvmcloud[.]com```
+  - ```ihvpgv9psvq02ffo77et.appsync-api.us-east-2.avsvmcloud[.]com``` 
+  - ```k5kcubuassl3alrf7gm3.appsync-api.eu-west-1.avsvmcloud[.]com``` 
+  - ```mhdosoksaccf9sni9icp.appsync-api.eu-west-1.avsvmcloud[.]com```
+- IPs assosciated with C2:
+  - ```13.59.205.66```
+  - ```54.193.127.66```
+  - ```54.215.192.52```
+  - ```34.203.203.23``` 
+  - ```139.99.115.204``` 
+  - ```5.252.177.25```
+  - ```5.252.177.21```
+  - ```204.188.205.176```	
+  - ```51.89.125.18```
+  - ```167.114.213.199```
   
 ## Malicious DLL Table:
 | SHA256                                                           | File Version      | Date first seen |
