@@ -6,6 +6,8 @@ For guidance on the solarwinds issue please see [DHS](https://cyber.dhs.gov/ed/2
 
 Advanced users, please see the [FireEYE repo](https://github.com/fireeye/sunburst_countermeasures) on this issue.
 
+SANS has a good video on the topic [here](https://www.youtube.com/watch?v=4tmlZCk2gCg&feature=youtu.be).
+
 ## Executables:
 The DLL in question is ```SolarWinds.Orion.Core.BusinessLayer.dll``` and was signed as a ligitimate part of the SolarWinds suite, bypassing application control technologies. It is installed as a service.
 
