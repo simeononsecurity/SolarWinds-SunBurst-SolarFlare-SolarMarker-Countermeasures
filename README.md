@@ -18,15 +18,15 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
 
 ## Network information:
 - DNS CNAMEs for C2:
-  - .appsync-api.eu-west-1[.]avsvmcloud[.]com
-  - .appsync-api.us-west-2[.]avsvmcloud[.]com
-  - .appsync-api.us-east-1[.]avsvmcloud[.]com
-  - .appsync-api.us-east-2[.]avsvmcloud[.]com
+  - ```.appsync-api.eu-west-1[.]avsvmcloud[.]com```
+  - ```.appsync-api.us-west-2[.]avsvmcloud[.]com```
+  - ```.appsync-api.us-east-1[.]avsvmcloud[.]com```
+  - ```.appsync-api.us-east-2[.]avsvmcloud[.]com```
 - IPs for C2:
-  - 20.140.0.0/15
-  - 96.31.172.0/24
-  - 131.228.12.0/22
-  - 144.86.226.0/24
+  - ```20.140.0.0/15```
+  - ```96.31.172.0/24```
+  - ```131.228.12.0/22```
+  - ```144.86.226.0/24```
   
 ## Malicious DLL Table:
 | SHA256                                                           | File Version      | Date first seen |
