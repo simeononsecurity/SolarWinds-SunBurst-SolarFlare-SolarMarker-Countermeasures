@@ -1,0 +1,68 @@
+<AppLockerPolicy Version="1">
+    <RuleCollection Type="Dll" EnforcementMode="Enabled">
+        <FileHashRule Id="0eaf08a8-2acf-41f4-9f9e-36ea8b1e0310" Name="SolarWinds 2019.4.5200.9083 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+            <Conditions>
+                <FileHashCondition>
+                    <FileHash Type="SHA256" Data="0x32519b85c0b422e4656de6e6c41878e95fd95026267daab4215ee59c107d6c77" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll"/>
+                </FileHashCondition>
+            </Conditions>
+        </FileHashRule>
+        <FileHashRule Id="925fc4ee-da59-4bac-9ff1-b2c4ae55830a" Name="SolarWinds 2020.2.100.12219 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+            <Conditions>
+                <FileHashCondition>
+                    <FileHash Type="SHA256" Data="0xdab758bf98d9b36fa057a66cd0284737abf89857b73ca89280267ee7caf62f3b" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll"/>
+                </FileHashCondition>
+            </Conditions>
+        </FileHashRule>
+        <FileHashRule Id="4b5a9475-90b3-43aa-b943-c64ec9e96d2b" Name="SolarWinds 2020.2.100.11831 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+            <Conditions>
+                <FileHashCondition>
+                    <FileHash Type="SHA256" Data="0xeb6fab5a2964c5817fb239a7a5079cabca0a00464fb3e07155f28b0a57a2c0ed" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll"/>
+                </FileHashCondition>
+            </Conditions>
+        </FileHashRule>
+        <FileHashRule Id="9d6522b1-0cd0-4d61-a59c-bcb21bf64ff7" Name="SolarWinds NA - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+            <Conditions>
+                <FileHashCondition>
+                    <FileHash Type="SHA256" Data="0xc09040d35630d75dfef0f804f320f8b3d16a481071076918e9b236a321c1ea77" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll" />
+                </FileHashCondition>
+            </Conditions>
+        </FileHashRule>
+    </RuleCollection>
+    <FileHashRule Id="0eaf08a8-2acf-41f4-9f9e-36ea8b1e0311" Name="SolarWinds 2020.4.100.478 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+        <Conditions>
+            <FileHashCondition>
+                <FileHash Type="SHA256" Data="0xac1b2b89e60707a20e9eb1ca480bc3410ead40643b386d624c5d21b47c02917c" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll"/>
+            </FileHashCondition>
+        </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="925fc4ee-da59-4bac-9ff1-b2c4ae558301" Name="SolarWinds 2020.2.5200.12394 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+        <Conditions>
+            <FileHashCondition>
+                <FileHash Type="SHA256" Data="0x019085a76ba7126fff22770d71bd901c325fc68ac55aa743327984e89f4b0134" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll"/>
+            </FileHashCondition>
+        </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="4b5a9475-90b3-43aa-b943-c64ec9e96d21" Name="SolarWinds 2020.2.5300.12432 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+        <Conditions>
+            <FileHashCondition>
+                <FileHash Type="SHA256" Data="0xce77d116a074dab7a22a0fd4f2c1ab475f16eec42e1ded3c0b0aa8211fe858d6" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll"/>
+            </FileHashCondition>
+        </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="9d6522b1-0cd0-4d61-a59c-bcb21bf64ff1" Name="SolarWinds 2019.4.5200.8890 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+        <Conditions>
+            <FileHashCondition>
+                <FileHash Type="SHA256" Data="0xa25cadd48d70f6ea0c4a241d99c5241269e6faccb4054e62d16784640f8e53bc" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll" />
+            </FileHashCondition>
+        </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="9d6522b1-0cd0-4d61-a59c-bcb21bf64ff2" Name="SolarWinds 2019.4.5200.8890 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
+        <Conditions>
+            <FileHashCondition>
+                <FileHash Type="SHA256" Data="0xd3c6785e18fba3749fb785bc313cf8346182f532c59172b69adfb31b96a5d0af" SourceFileName="SolarWinds.Orion.Core.BusinessLayer.dll" />
+            </FileHashCondition>
+        </Conditions>
+    </FileHashRule>
+</RuleCollection>
+</AppLockerPolicy>
