@@ -19,7 +19,8 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
 - ```SolarwindsDiagnostics.exe```
 
 ## Network information:
-**General Ranges**
+
+**General Ranges:**
 - DNS CNAMEs for C2:
   - ```.appsync-api.eu-west-1[.]avsvmcloud[.]com```
   - ```.appsync-api.us-west-2[.]avsvmcloud[.]com```
@@ -30,6 +31,7 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
   - ```96.31.172.0/24```
   - ```131.228.12.0/22```
   - ```144.86.226.0/24```
+
 **Specifically Identified**
 - DNS Names associated with C2:
   - ```6a57jk2ba1d9keg15cbg.appsync-api.eu-west-1.avsvmcloud[.]com```
