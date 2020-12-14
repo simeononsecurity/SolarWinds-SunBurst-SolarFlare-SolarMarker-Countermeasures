@@ -8,13 +8,13 @@ For guidance on the solarwinds issue please see [DHS](https://cyber.dhs.gov/ed/2
 The DLL in question is ```SolarWinds.Orion.Core.BusinessLayer.dll``` and was signed as a ligitimate part of the SolarWinds suite, bypassing application control technologies. It is installed as a service.
 
 The malicious code was injected into a legitimate DLL and is loaded into memory when the application runs. The code runs before the legitimate code. According to Microsoft, the code is activated when ```SolarWinds.BusinessLayerHost.exe``` executable runs, but may the following may also load it:
-- ConfigurationWizard.exe
-- NetflowDatabaseMaintenance.exe
-- NetFlowService.exe
-- SolarWinds.Administration.exe
-- SolarWinds.BusinessLayerHost.exe
-- SolarWinds.Collector.Service.exe
-- SolarwindsDiagnostics.exe
+- ```ConfigurationWizard.exe```
+- ```NetflowDatabaseMaintenance.exe```
+- ```NetFlowService.exe```
+- ```SolarWinds.Administration.exe```
+- ```SolarWinds.BusinessLayerHost.exe```
+- ```SolarWinds.Collector.Service.exe```
+- ```SolarwindsDiagnostics.exe```
 
 ## Network information:
 - DNS CNAMEs for C2:
