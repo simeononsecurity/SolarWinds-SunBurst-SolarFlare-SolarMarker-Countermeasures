@@ -28,7 +28,6 @@
                 </FileHashCondition>
             </Conditions>
         </FileHashRule>
-    </RuleCollection>
     <FileHashRule Id="0eaf08a8-2acf-41f4-9f9e-36ea8b1e0311" Name="SolarWinds 2020.4.100.478 - HASH RULE" Description="Identified in: https://msrc-blog.microsoft.com/2020/12/13/customer-guidance-on-recent-nation-state-cyber-attacks/" UserOrGroupSid="S-1-1-0" Action="Deny">
         <Conditions>
             <FileHashCondition>
