@@ -96,7 +96,9 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
 
 
 ### Sites Known to Be Hit By SunBurst/SolarFlare:
+
 https://github.com/RedDrip7/SunBurst_DGA_Decode
+
 https://pastebin.com/raw/6NukuxBN
 ```
 .gh
