@@ -12,6 +12,7 @@ ForEach ($Policy in (Get-ChildItem ./Files/).FullName){
 }
 
 # Appplocker service running?
+Write-Output "Starting and Enabling Applocker Service"
 Set-Service -Name AppIdsvc -StartupType Automatic
 Start-Service AppIdsvc
 Get-Service -Name AppIdsvc | fl St*
