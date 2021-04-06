@@ -37,8 +37,8 @@ Write-Output "" | Out-File -Encoding ASCII -Append $hosts_file
 foreach ($domain in $domains) {
     if (-Not (Select-String -Path $hosts_file -Pattern $domain)) {
         Write-Output "0.0.0.0 $domain" | Out-File -Encoding ASCII -Append $hosts_file
-        Write-Output "Blocked $domain"
     }
+    Write-Output "Blocked $domain"
 }
 
 Write-Output "Blocking C2 IPs"
