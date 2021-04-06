@@ -19,33 +19,46 @@ Get-Service -Name AppIdsvc | fl St*
 Get-AppLockerPolicy -Local
 
 #https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html
-#Outbound Rules
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 13.59.205.66" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 13.59.205.66
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 131.228.12.0/22" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 131.228.12.0/22
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 139.99.115.204" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 139.99.115.204
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 144.86.226.0/24" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 144.86.226.0/24
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 167.114.213.199" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 167.114.213.199
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 20.140.0.0/15" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 20.140.0.0/15
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 204.188.205.176" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 204.188.205.176
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 34.203.203.23" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 34.203.203.23
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 5.252.177.21" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 5.252.177.21
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 5.252.177.25" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 5.252.177.25
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 51.89.125.18" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 51.89.125.18
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 54.193.127.66" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 54.193.127.66
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 54.215.192.52" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 54.215.192.52
-New-NetFirewallRule -DisplayName "Block Outbound Solarwinds 96.31.172.0/24" -Direction Outbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 96.31.172.0/24
-#Inbound Rules
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 13.59.205.66" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 13.59.205.66
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 131.228.12.0/22" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 131.228.12.0/22
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 139.99.115.204" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 139.99.115.204
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 144.86.226.0/24" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 144.86.226.0/24
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 167.114.213.199" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 167.114.213.199
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 20.140.0.0/15" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 20.140.0.0/15
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 204.188.205.176" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 204.188.205.176
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 34.203.203.23" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 34.203.203.23
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 5.252.177.21" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 5.252.177.21
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 5.252.177.25" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 5.252.177.25
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 51.89.125.18" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 51.89.125.18
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 54.193.127.66" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 54.193.127.66
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 54.215.192.52" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 54.215.192.52
-New-NetFirewallRule -DisplayName "Block Inbound Solarwinds 96.31.172.0/24" -Direction Inbound –LocalPort Any -Protocol Any -Action Block -RemoteAddress 96.31.172.0/24
+#https://www.crowdstrike.com/blog/solarmarker-backdoor-technical-analysis/
+Write-Output "Blocking C2 Domain Names with Host File"
+)
+$hosts_file = "$env:systemroot\System32\drivers\etc\hosts"
+$domains = @(
+   "6a57jk2ba1d9keg15cbg.appsync-api.eu-west-1.avsvmcloud.com"
+   "7sbvaemscs0mc925tb99.appsync-api.us-west-2.avsvmcloud.com"
+   "gq1h856599gqh538acqn.appsync-api.us-west-2.avsvmcloud.com"
+   "ihvpgv9psvq02ffo77et.appsync-api.us-east-2.avsvmcloud.com"
+   "k5kcubuassl3alrf7gm3.appsync-api.eu-west-1.avsvmcloud.com"
+   "mhdosoksaccf9sni9icp.appsync-api.eu-west-1.avsvmcloud.com"
+   "vincentolife.com"
+)
+Write-Output "" | Out-File -Encoding ASCII -Append $hosts_file
+foreach ($domain in $domains) {
+    if (-Not (Select-String -Path $hosts_file -Pattern $domain)) {
+        Write-Output "0.0.0.0 $domain" | Out-File -Encoding ASCII -Append $hosts_file
+    }
+}
+
+Write-Output "Blocking C2 IPs"
+$ips = @(
+   "13.59.205.66"
+   "131.228.12.0/22"
+   "139.99.115.204"
+   "144.86.226.0/24"
+   "167.114.213.199"
+   "20.140.0.0/15"
+   "204.188.205.176"
+   "34.203.203.23"
+   "5.252.177.21"
+   "5.252.177.25"
+   "51.89.125.18"
+   "54.193.127.66"
+   "54.215.192.52"
+   "96.31.172.0/24"
+   "45.135.232.131"
+)
+Remove-NetFirewallRule -DisplayName "Block Telemetry IPs" -ErrorAction SilentlyContinue | Out-Null
+New-NetFirewallRule -DisplayName "Block Telemetry IPs" -Direction Outbound `
+    -Action Block -RemoteAddress ([string[]]$ips) | Out-Null
+New-NetFirewallRule -DisplayName "Block Telemetry IPs" -Direction Inbound `
+    -Action Block -RemoteAddress ([string[]]$ips) | Out-Null
