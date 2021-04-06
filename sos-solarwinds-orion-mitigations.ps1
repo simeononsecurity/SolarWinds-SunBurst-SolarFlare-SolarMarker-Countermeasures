@@ -8,6 +8,7 @@ do {} until (Elevate-Privileges SeTakeOwnershipPrivilege)
 
 ForEach ($Policy in (Get-ChildItem ./Files/).FullName){
    Set-AppLockerPolicy -XMLPolicy "$Policy" -Merge
+   Write-Output "Murged Applocker Policy"
 }
 
 # Appplocker service running?
@@ -16,6 +17,7 @@ Start-Service AppIdsvc
 Get-Service -Name AppIdsvc | fl St*
 
 #Print Conf
+Write-Output "Displaying Curent Applocker Policy"
 Get-AppLockerPolicy -Local
 
 #https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html
@@ -35,6 +37,7 @@ Write-Output "" | Out-File -Encoding ASCII -Append $hosts_file
 foreach ($domain in $domains) {
     if (-Not (Select-String -Path $hosts_file -Pattern $domain)) {
         Write-Output "0.0.0.0 $domain" | Out-File -Encoding ASCII -Append $hosts_file
+        Write-Output "Blocked $domain"
     }
 }
 
@@ -61,3 +64,6 @@ New-NetFirewallRule -DisplayName "Blocking C2 IPs" -Direction Outbound `
     -Action Block -RemoteAddress ([string[]]$ips) | Out-Null
 New-NetFirewallRule -DisplayName "Blocking C2 IPs" -Direction Inbound `
     -Action Block -RemoteAddress ([string[]]$ips) | Out-Null
+ForEach ($ip in $ips){
+   Write-Output "Blocked $ip"
+}
