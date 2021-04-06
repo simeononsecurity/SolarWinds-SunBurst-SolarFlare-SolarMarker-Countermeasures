@@ -43,6 +43,7 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
   - ```ihvpgv9psvq02ffo77et.appsync-api.us-east-2.avsvmcloud[.]com``` 
   - ```k5kcubuassl3alrf7gm3.appsync-api.eu-west-1.avsvmcloud[.]com``` 
   - ```mhdosoksaccf9sni9icp.appsync-api.eu-west-1.avsvmcloud[.]com```
+  - ```vincentolife[.]com/j```
 - IPs assosciated with C2:
   - ```13.59.205.66```
   - ```54.193.127.66```
@@ -94,7 +95,26 @@ The malicious code was injected into a legitimate DLL and is loaded into memory 
 | 292327e5c94afa352cc5a02ca273df543f2020d0e76368ff96c84f4e90778712  | c2c30b3a287d82f88753c85cfb11ec9eb1466bad  | 4f2eb62fa529c0283b28d05ddd311fae  | OrionImprovementBusinessLayer.2.cs                               | text/plain                      | SUNBURST                  | Decompiled and corrected source code for SUNBURST  |
 | c15abaf51e78ca56c0376522d699c978217bf041a3bd3c71d09193efa5717c71  |                                           |                                   |                                                                  |                                 |                           |                                                    |
 
+## CroudStrike 
+### SolarMarker Indicator Table:
+| Description                     | Path if applicable                            | SHA256 hash if applicable                                          |
+|---------------------------------|-----------------------------------------------|--------------------------------------------------------------------|
+| Second stage                    | %Temp%\<random chars>.txt                     | Changes due to randomly generated path to third stage it contains  |
+| Encrypted third stage           | %Temp%\<random chars>.txt                     | e82a58e59321852c6857aa511472cbb7327822461a03e3c189304b2c36f17273   |
+| Third stage                     | None                                          | 2860a7b98dbfc4c10347187e79d7528a875dd71a893ce025190b57bcb1bcc0f0   |
+| Fourth stage                    | %AppData%\microsoft\<RND4>\<RND8>.cmd         | Changes due to randomly generated paths it contains                |
+| Encrypted backdoor              | None                                          | b3e6a879d4ac3fff34b520f39994639df26e846087632fb7505e89a4da220868   |
+| Base64-decoded backdoor         | %AppData%\microsoft\<RND4>\<RND52>            | 45ea9b5697517f7bdc5af83c62bb8de7821baef9463c466cfc0e881f21c32011   |
+| Backdoor                        | None                                          | ceb42fea3be898251028e2c5128a69451212bcb48a4871454c60dc2262426677   |
+| SolarMarker Stealer first stage | %Temp%\<RND24>.ps1                            | 2a8bc51367801c87ca2c64fdad1d0b06f91bbbc4f0f16ad18dbc122fda3d1a87   |
+| SolarMarker Stealer             | None                                          | ce486097ad2491aba8b1c120f6d0aa23eaf59cf698b57d2113faab696d03c601   |
+| Victim ID                       | %userprofile%\AppData\Roaming\solarmarker.dat | Changes due to randomly generated content                          |
 
+### SolarMarker Network Table:
+| Description             | C2                             |
+|-------------------------|--------------------------------|
+| SolarMarker Backdoor C2 | http[:]//45.135.232[.]131      |
+| SolarMarker Stealer C2  | https[:]//vincentolife[.]com/j |
 
 ### Sites Known to Be Hit By SunBurst/SolarFlare:
 
