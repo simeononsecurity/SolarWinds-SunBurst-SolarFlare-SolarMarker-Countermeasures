@@ -56,8 +56,8 @@ $ips = @(
    "96.31.172.0/24"
    "45.135.232.131"
 )
-Remove-NetFirewallRule -DisplayName "Block Telemetry IPs" -ErrorAction SilentlyContinue | Out-Null
-New-NetFirewallRule -DisplayName "Block Telemetry IPs" -Direction Outbound `
+Remove-NetFirewallRule -DisplayName "Blocking C2 IPs" -ErrorAction SilentlyContinue | Out-Null
+New-NetFirewallRule -DisplayName "Blocking C2 IPs" -Direction Outbound `
     -Action Block -RemoteAddress ([string[]]$ips) | Out-Null
-New-NetFirewallRule -DisplayName "Block Telemetry IPs" -Direction Inbound `
+New-NetFirewallRule -DisplayName "Blocking C2 IPs" -Direction Inbound `
     -Action Block -RemoteAddress ([string[]]$ips) | Out-Null
