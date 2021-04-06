@@ -21,7 +21,6 @@ Get-AppLockerPolicy -Local
 #https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html
 #https://www.crowdstrike.com/blog/solarmarker-backdoor-technical-analysis/
 Write-Output "Blocking C2 Domain Names with Host File"
-)
 $hosts_file = "$env:systemroot\System32\drivers\etc\hosts"
 $domains = @(
    "6a57jk2ba1d9keg15cbg.appsync-api.eu-west-1.avsvmcloud.com"
